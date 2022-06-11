@@ -12,14 +12,14 @@
 <!--</script>-->
 
 <!--bài 2: câu lệnh là-->
-<!--<input id='inputa' type="text" placeholder="Nhập số a:">-->
-<!--<input id="inputb" type="text" placeholder="Nhập số b:">-->
+<!--<input id='inputa' type="number" placeholder="Nhập số a:" oninput="kq()">-->
+<!--<input id="inputb" type="number" placeholder="Nhập số b:" oninput="kq()">-->
 <!--<button onclick="kq()" >Ketqua</button>-->
 <!--<h1 id="s"></h1>-->
 <!--<script>-->
 <!--    function kq(){-->
-<!--    let a=document.getElementById("inputa").value;-->
-<!--    let b=document.getElementById("inputb").value;-->
+<!--    let a=Number(document.getElementById("inputa").value);-->
+<!--    let b=Number(document.getElementById("inputb").value);-->
 <!--    let s=a*b;-->
 <!--    document.getElementById("s").innerHTML="Kết quả là:S = "+a+ " x "+b+ " = "+s;}-->
 
@@ -29,10 +29,10 @@
 <br>
 <div style="position:relative;text-align: center">
 <p id="in"></p><br>
-<input id="a" type="text" placeholder="Nhập vào a:">
-<input id="b" type="text" placeholder="Nhập vào b:">
-<input id="c" type="text" placeholder="Nhập vào c:">
-<input id="year" type="text" placeholder="Nhập vào số năm:"><br> <br>
+<input id="a" type="number" placeholder="Nhập vào a:">
+<input id="b" type="number" placeholder="Nhập vào b:">
+<input id="c" type="number" placeholder="Nhập vào c:">
+<input id="year" type="number" placeholder="Nhập vào số năm:"><br> <br>
 <button id="kqa" onclick="kqa()">Kết quả phần a</button>
 <button id="kqb" onclick="kqb()">Kết quả phần b</button>
 <button id="kqc" onclick="kqc()">Kết quả phần c</button>
@@ -48,15 +48,20 @@
     // bài 3 phần a
     function kqa() {
         let a = Number(document.getElementById("a").value);
-        let c = 4 * a;
-        let s = a * a;
-        document.getElementById("in").innerHTML = "Chu vi của hình vuông là:" + c + "<br>" + "Diện tích hình vuông là:" + s;
+        if (a <= 0) {
+            document.getElementById("in").innerHTML = "Nhập lại cạnh a lớn hơn 0"
+        } else {
+            let c = 4 * a;
+            let s = a * a;
+            document.getElementById("in").innerHTML = "Chu vi của hình vuông là:" + c + "<br>" + "Diện tích hình vuông là:" + s;
+
+        }
     }
     // bài 3 phần b
     function kqb() {
         let a = Number(document.getElementById("a").value);
         let b = Number(document.getElementById("b").value);
-        let c = a ** 2;
+        let c = a**2;
         let d = a ** b;
         document.getElementById("in").innerHTML = "a^2=" + c + "<br>" + "a^b=" + d
 
