@@ -68,13 +68,25 @@
     }
     // bài 3 phần c
     function kqc() {
-        let a = Number(document.getElementById("a").value);
-        let b = Number(document.getElementById("b").value);
-        let s = 0;
-        for (let i = a; i <= b; i++) {
-            s = s + i;
+
+            let a = Number(document.getElementById("a").value);
+            let b = Number(document.getElementById("b").value);
+            let s = 0;
+        if (a > b) {
+            for (let i = a; i >= b; i--) {
+                s = s + i;
+            }
+            document.getElementById('in').innerHTML = "Tổng các số từ " + a + " đến " + b + "= " + s
         }
-        document.getElementById('in').innerHTML = "Tổng các số từ " + a + " đến " + b + "= " + s
+        else{
+            // let a = Number(document.getElementById("a").value);
+            // let b = Number(document.getElementById("b").value);
+            // let s = 0;
+            for (let i = a; i<=b; i++) {
+                s = s + i;
+            }
+            document.getElementById('in').innerHTML = "Tổng các số từ " + a + " đến " + b + "= " + s
+        }
     }
     // bài 3 phần d
 // dùng switch case tính đến năm có 4 chữ số
